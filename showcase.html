@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rental Management System — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #21262d;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #7d8590;
+    --accent: #2f81f7;
+    --accent-soft: #1f3a5f;
+    --green: #3fb950;
+    --green-soft: #1a3a28;
+    --purple: #a371f7;
+    --purple-soft: #2d1f5e;
+    --amber: #d29922;
+    --amber-soft: #3d2e0a;
+    --radius: 8px;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* NAV */
+  nav {
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    position: sticky; top: 0;
+    background: rgba(13,17,23,0.92);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--muted); }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 1.5rem; }
+  .nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.15s; }
+  .nav-links a:hover { color: var(--text); }
+
+  /* HERO */
+  .hero { padding: 5rem 0 3.5rem; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; font-family: 'JetBrains Mono', monospace;
+    color: var(--green); background: var(--green-soft);
+    border: 1px solid #2ea04326; border-radius: 20px;
+    padding: 4px 12px; margin-bottom: 1.5rem;
+  }
+  .hero-tag::before { content: '●'; font-size: 8px; }
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+  }
+  h1 em { font-style: normal; color: var(--accent); }
+  .hero-desc {
+    font-size: 16px; color: var(--muted); max-width: 580px;
+    line-height: 1.8; margin-bottom: 2rem;
+  }
+  .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 20px; border-radius: var(--radius);
+    font-size: 14px; font-weight: 500; text-decoration: none;
+    transition: all 0.15s; cursor: pointer; border: none;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: #58a6ff; }
+  .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+  .btn-secondary:hover { border-color: var(--muted); }
+
+  /* STATS */
+  .stats-row {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px; padding: 2.5rem 0; border-top: 1px solid var(--border);
+  }
+  .stat { text-align: center; padding: 1rem; }
+  .stat-num { font-size: 28px; font-weight: 600; color: var(--text); }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  /* SECTIONS */
+  section { padding: 3.5rem 0; border-top: 1px solid var(--border); }
+  .section-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--accent);
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  h2 { font-size: 24px; font-weight: 600; margin-bottom: 1.5rem; }
+
+  /* TECH STACK */
+  .stack-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 14px; border-radius: 20px;
+    font-size: 13px; font-weight: 500; border: 1px solid;
+  }
+  .chip-blue { background: var(--accent-soft); color: #79c0ff; border-color: #2f81f740; }
+  .chip-green { background: var(--green-soft); color: #7ee787; border-color: #3fb95040; }
+  .chip-purple { background: var(--purple-soft); color: #d2a8ff; border-color: #a371f740; }
+  .chip-amber { background: var(--amber-soft); color: #e3b341; border-color: #d2992240; }
+  .chip-gray { background: var(--surface2); color: var(--muted); border-color: var(--border); }
+
+  /* ARCHITECTURE */
+  .arch-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.5rem; overflow: hidden;
+  }
+  .arch-layer {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 0;
+  }
+  .arch-layer:not(:last-child) { border-bottom: 1px dashed var(--border); }
+  .arch-layer-name {
+    width: 90px; font-size: 11px; font-family: 'JetBrains Mono', monospace;
+    color: var(--muted); flex-shrink: 0; text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .arch-boxes { display: flex; gap: 6px; flex-wrap: wrap; flex: 1; }
+  .arch-box {
+    padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 500;
+    border: 1px solid;
+  }
+  .arch-box-blue { background: var(--accent-soft); color: #79c0ff; border-color: #2f81f740; }
+  .arch-box-purple { background: var(--purple-soft); color: #d2a8ff; border-color: #a371f740; }
+  .arch-box-green { background: var(--green-soft); color: #7ee787; border-color: #3fb95040; }
+  .arch-box-gray { background: var(--surface2); color: var(--text); border-color: var(--border); }
+
+  /* FEATURES */
+  .features-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .feature-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.25rem;
+    transition: border-color 0.15s;
+  }
+  .feature-card:hover { border-color: var(--muted); }
+  .feature-header { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+  .feature-icon {
+    width: 36px; height: 36px; border-radius: var(--radius);
+    display: flex; align-items: center; justify-content: center; font-size: 16px;
+  }
+  .feature-title { font-size: 14px; font-weight: 600; }
+  .feature-role { font-size: 11px; font-family: 'JetBrains Mono', monospace; color: var(--muted); }
+  .feature-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .feature-list li { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+  .feature-list li::before { content: '→'; color: var(--accent); font-size: 12px; }
+
+  /* API TABLE */
+  .api-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .api-table th { text-align: left; padding: 8px 12px; color: var(--muted); font-weight: 500; border-bottom: 1px solid var(--border); }
+  .api-table td { padding: 10px 12px; border-bottom: 1px dashed var(--border); font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+  .method { padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .get { background: #1a3a28; color: #7ee787; }
+  .post { background: #1f3a5f; color: #79c0ff; }
+  .put { background: #3d2e0a; color: #e3b341; }
+  .del { background: #3a1a1a; color: #f85149; }
+  .role-badge { font-size: 11px; padding: 2px 8px; border-radius: 4px; font-family: 'Inter', sans-serif; }
+  .role-admin { background: var(--purple-soft); color: #d2a8ff; }
+  .role-tenant { background: var(--green-soft); color: #7ee787; }
+  .role-public { background: var(--surface2); color: var(--muted); }
+
+  /* QUICK START */
+  .code-block {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+  }
+  .code-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 16px; border-bottom: 1px solid var(--border);
+    font-size: 12px; color: var(--muted); font-family: 'JetBrains Mono', monospace;
+  }
+  .code-dots { display: flex; gap: 6px; }
+  .code-dots span { width: 12px; height: 12px; border-radius: 50%; background: var(--border); }
+  pre {
+    padding: 1.25rem 1.5rem; font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; line-height: 1.7; overflow-x: auto; color: var(--text);
+  }
+  .c-green { color: var(--green); }
+  .c-muted { color: var(--muted); }
+  .c-accent { color: #79c0ff; }
+
+  /* AUTHOR */
+  .author-section {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.75rem;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem;
+  }
+  .author-left { display: flex; align-items: center; gap: 14px; }
+  .avatar {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-soft), var(--purple-soft));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600; font-size: 18px; border: 2px solid var(--border);
+  }
+  .author-name { font-size: 16px; font-weight: 600; }
+  .author-role { font-size: 13px; color: var(--muted); }
+  .author-right { display: flex; gap: 8px; }
+
+  footer {
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="nav-logo"><span>~/</span>rental-management</div>
+    <div class="nav-links">
+      <a href="#stack">Stack</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#features">Features</a>
+      <a href="#api">API</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero" style="border: none; padding-top: 4rem;">
+    <div class="hero-tag">Portfolio Project</div>
+    <h1>Rental <em>Management</em><br>System</h1>
+    <p class="hero-desc">
+      ระบบจัดการอสังหาริมทรัพย์ให้เช่าแบบครบวงจร สำหรับ Admin และ Tenant
+      พัฒนาด้วย ASP.NET Core 8 ตาม Clean Architecture พร้อม JWT Authentication,
+      Role-Based Authorization และ Docker
+    </p>
+    <div class="hero-buttons">
+      <a href="https://github.com/yourname/rental-management" class="btn btn-primary">
+        ⌥ GitHub Repository
+      </a>
+      <a href="#" class="btn btn-secondary">↗ Live Demo</a>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Clean Architecture Layers</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">API Endpoints</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">2</div>
+        <div class="stat-label">User Roles</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">JWT</div>
+        <div class="stat-label">Authentication</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section id="stack">
+    <div class="section-eyebrow">// tech stack</div>
+    <h2>เทคโนโลยีที่ใช้</h2>
+    <div class="stack-grid">
+      <span class="chip chip-blue">ASP.NET Core 8</span>
+      <span class="chip chip-blue">Entity Framework Core</span>
+      <span class="chip chip-blue">JWT Authentication</span>
+      <span class="chip chip-green">PostgreSQL</span>
+      <span class="chip chip-purple">Clean Architecture</span>
+      <span class="chip chip-purple">Repository Pattern</span>
+      <span class="chip chip-purple">Unit of Work</span>
+      <span class="chip chip-purple">Dependency Injection</span>
+      <span class="chip chip-gray">AutoMapper</span>
+      <span class="chip chip-gray">FluentValidation</span>
+      <span class="chip chip-gray">Swagger / OpenAPI</span>
+      <span class="chip chip-amber">Docker</span>
+      <span class="chip chip-amber">xUnit + Moq</span>
+      <span class="chip chip-amber">Serilog</span>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE -->
+  <section id="architecture">
+    <div class="section-eyebrow">// architecture</div>
+    <h2>Clean Architecture</h2>
+    <div class="arch-card">
+      <div class="arch-layer">
+        <div class="arch-layer-name">Client</div>
+        <div class="arch-boxes">
+          <div class="arch-box arch-box-gray">Admin Portal</div>
+          <div class="arch-box arch-box-gray">Tenant App</div>
+        </div>
+      </div>
+      <div class="arch-layer">
+        <div class="arch-layer-name">API Layer</div>
+        <div class="arch-boxes">
+          <div class="arch-box arch-box-blue">Controllers</div>
+          <div class="arch-box arch-box-blue">JWT Middleware</div>
+          <div class="arch-box arch-box-blue">Role-Based Auth</div>
+          <div class="arch-box arch-box-blue">Swagger</div>
+        </div>
+      </div>
+      <div class="arch-layer">
+        <div class="arch-layer-name">Application</div>
+        <div class="arch-boxes">
+          <div class="arch-box arch-box-purple">Use Cases / Services</div>
+          <div class="arch-box arch-box-purple">AutoMapper</div>
+          <div class="arch-box arch-box-purple">FluentValidation</div>
+          <div class="arch-box arch-box-purple">DTOs</div>
+        </div>
+      </div>
+      <div class="arch-layer">
+        <div class="arch-layer-name">Domain</div>
+        <div class="arch-boxes">
+          <div class="arch-box arch-box-gray">Entities</div>
+          <div class="arch-box arch-box-gray">Interfaces</div>
+          <div class="arch-box arch-box-gray">Enums</div>
+        </div>
+      </div>
+      <div class="arch-layer">
+        <div class="arch-layer-name">Infra</div>
+        <div class="arch-boxes">
+          <div class="arch-box arch-box-green">EF Core</div>
+          <div class="arch-box arch-box-green">GenericRepository</div>
+          <div class="arch-box arch-box-green">UnitOfWork</div>
+          <div class="arch-box arch-box-green">PostgreSQL</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="section-eyebrow">// features</div>
+    <h2>ฟีเจอร์ของระบบ</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-header">
+          <div class="feature-icon" style="background:var(--accent-soft)">🔐</div>
+          <div>
+            <div class="feature-title">Admin</div>
+            <div class="feature-role">role: Admin</div>
+          </div>
+        </div>
+        <ul class="feature-list">
+          <li>Login & JWT Authentication</li>
+          <li>Dashboard overview</li>
+          <li>CRUD จัดการบ้าน & รูปภาพ</li>
+          <li>CRUD จัดการผู้เช่า</li>
+          <li>ออกสัญญาเช่า</li>
+          <li>บันทึกการชำระค่าเช่า</li>
+          <li>แจ้งเตือนค้างชำระ</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-header">
+          <div class="feature-icon" style="background:var(--green-soft)">👤</div>
+          <div>
+            <div class="feature-title">Tenant</div>
+            <div class="feature-role">role: Tenant</div>
+          </div>
+        </div>
+        <ul class="feature-list">
+          <li>Login & JWT Authentication</li>
+          <li>ดูข้อมูลการเช่าของตัวเอง</li>
+          <li>ดูประวัติการจ่ายเงิน</li>
+          <li>แจ้งซ่อมบำรุง</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-header">
+          <div class="feature-icon" style="background:var(--amber-soft)">⭐</div>
+          <div>
+            <div class="feature-title">Bonus</div>
+            <div class="feature-role">extra features</div>
+          </div>
+        </div>
+        <ul class="feature-list">
+          <li>Docker + Docker Compose</li>
+          <li>Unit Testing (xUnit + Moq)</li>
+          <li>Structured Logging (Serilog)</li>
+          <li>Role-Based Authorization</li>
+          <li>Global Exception Middleware</li>
+          <li>Result Pattern</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- API ENDPOINTS -->
+  <section id="api">
+    <div class="section-eyebrow">// api endpoints</div>
+    <h2>API Reference</h2>
+    <table class="api-table">
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th>Endpoint</th>
+          <th>Description</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="method post">POST</span></td><td>/api/auth/admin/login</td><td>Admin login</td><td><span class="role-badge role-public">Public</span></td></tr>
+        <tr><td><span class="method post">POST</span></td><td>/api/auth/tenant/login</td><td>Tenant login</td><td><span class="role-badge role-public">Public</span></td></tr>
+        <tr><td><span class="method get">GET</span></td><td>/api/houses</td><td>ดูบ้านทั้งหมด</td><td><span class="role-badge role-admin">Admin</span></td></tr>
+        <tr><td><span class="method post">POST</span></td><td>/api/houses</td><td>เพิ่มบ้านใหม่</td><td><span class="role-badge role-admin">Admin</span></td></tr>
+        <tr><td><span class="method put">PUT</span></td><td>/api/houses/{id}</td><td>แก้ไขข้อมูลบ้าน</td><td><span class="role-badge role-admin">Admin</span></td></tr>
+        <tr><td><span class="method del">DEL</span></td><td>/api/houses/{id}</td><td>ลบบ้าน</td><td><span class="role-badge role-admin">Admin</span></td></tr>
+        <tr><td><span class="method post">POST</span></td><td>/api/houses/{id}/image</td><td>อัปโหลดรูปบ้าน</td><td><span class="role-badge role-admin">Admin</span></td></tr>
+        <tr><td><span class="method get">GET</span></td><td>/api/tenants</td><td>ดูผู้เช่าทั้งหมด</td><td><span class="role-badge role-admin">Admin</span></td></tr>
+        <tr><td><span class="method post">POST</span></td><td>/api/tenants</td><td>เพิ่มผู้เช่าใหม่</td><td><span class="role-badge role-admin">Admin</span></td></tr>
+        <tr><td><span class="method get">GET</span></td><td>/api/payments/overdue</td><td>ดูรายการค้างชำระ</td><td><span class="role-badge role-admin">Admin</span></td></tr>
+        <tr><td><span class="method put">PUT</span></td><td>/api/payments/{id}/pay</td><td>บันทึกการชำระ</td><td><span class="role-badge role-admin">Admin</span></td></tr>
+        <tr><td><span class="method get">GET</span></td><td>/api/payments/contract/{id}</td><td>ดูประวัติจ่ายเงิน</td><td><span class="role-badge role-tenant">Tenant</span></td></tr>
+        <tr><td><span class="method post">POST</span></td><td>/api/maintenance</td><td>แจ้งซ่อม</td><td><span class="role-badge role-tenant">Tenant</span></td></tr>
+        <tr><td><span class="method get">GET</span></td><td>/api/maintenance</td><td>ดูรายการแจ้งซ่อม</td><td><span class="role-badge role-admin">Admin</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- QUICK START -->
+  <section>
+    <div class="section-eyebrow">// quick start</div>
+    <h2>เริ่มต้นใช้งาน</h2>
+    <div class="code-block">
+      <div class="code-header">
+        <div class="code-dots"><span></span><span></span><span></span></div>
+        <span>terminal</span>
+      </div>
+      <pre><span class="c-muted"># clone โปรเจค</span>
+<span class="c-accent">git clone</span> https://github.com/yourname/rental-management.git
+<span class="c-accent">cd</span> rental-management
+
+<span class="c-muted"># รันด้วย Docker (แนะนำ)</span>
+<span class="c-green">docker-compose up --build</span>
+
+<span class="c-muted"># API จะรันที่ http://localhost:8080</span>
+<span class="c-muted"># Swagger UI: http://localhost:8080/swagger</span>
+
+<span class="c-muted"># รัน Unit Tests</span>
+<span class="c-accent">dotnet test</span> tests/RentalManagement.UnitTests</pre>
+    </div>
+  </section>
+
+  <!-- AUTHOR -->
+  <section style="border-top: 1px solid var(--border); padding-top: 2.5rem; padding-bottom: 3rem;">
+    <div class="author-section">
+      <div class="author-left">
+        <div class="avatar">YN</div>
+        <div>
+          <div class="author-name">Your Name</div>
+          <div class="author-role">Backend Developer · .NET / C#</div>
+        </div>
+      </div>
+      <div class="author-right">
+        <a href="https://github.com/yourname" class="btn btn-secondary">⌥ GitHub</a>
+        <a href="mailto:your@email.com" class="btn btn-secondary">✉ Email</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="container">
+    Built with ASP.NET Core 8 · Clean Architecture · PostgreSQL · Docker
+  </div>
+</footer>
+
+</body>
+</html>
