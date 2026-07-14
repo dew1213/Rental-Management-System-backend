@@ -3,6 +3,7 @@ using RentalManagement.Application.Common;
 using RentalManagement.Application.DTOs.House;
 using RentalManagement.Application.Services.Interfaces;
 using RentalManagement.Domain.Entities;
+using RentalManagement.Domain.Enums;
 using RentalManagement.Domain.Interfaces;
 
 namespace RentalManagement.Application.Services;
@@ -145,4 +146,24 @@ public class HouseService : IHouseService
             house.CreatedAt
         ));
     }
+
+    public async Task<Result<IEnumerable<HouseDto>>> GetAvailableAsync()
+    {
+        var houses = await _unitOfWork.Houses.GetAllAsync();
+
+        var result = houses
+            .Where(h => h.Status == HouseStatus.Available)
+            .Select(h => new HouseDto(
+                h.Id,
+                h.Name,
+                h.Address,
+                h.MonthlyRent,
+                h.Status,
+                h.ImageUrl,
+                h.CreatedAt
+            ));
+
+        return Result<IEnumerable<HouseDto>>.Success(result);
+    }
+
 }

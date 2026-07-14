@@ -11,4 +11,5 @@ public interface IHouseService
     Task<Result<HouseDto>> UpdateAsync(int id, UpdateHouseRequest request);
     Task<Result<bool>> DeleteAsync(int id);
     Task<Result<HouseDto>> UploadImageAsync(int id, string imageUrl);
+    Task<Result<IEnumerable<HouseDto>>> GetAvailableAsync();
 }

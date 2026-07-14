@@ -7,6 +7,6 @@ namespace RentalManagement.Application.Services.Interfaces;
 public interface IMaintenanceService
 {
     Task<Result<IEnumerable<MaintenanceDto>>> GetAllAsync();
-    Task<Result<MaintenanceDto>> CreateAsync(CreateMaintenanceRequest request);
-    Task<Result<MaintenanceDto>> UpdateStatusAsync(int id, MaintenanceStatus status);
+    //Task<Result<MaintenanceDto>> CreateAsync(CreateMaintenanceRequest request);
+    Task<Result<MaintenanceDto>> UpdateStatusAsync(int id, UpdateMaintenanceStatusRequest status);
 }

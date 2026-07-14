@@ -20,3 +20,4 @@ E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.Doma
 E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.Domain\obj\Debug\net8.0\refint\RentalManagement.Domain.dll
 E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.Domain\obj\Debug\net8.0\RentalManagement.Domain.pdb
 E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.Domain\obj\Debug\net8.0\ref\RentalManagement.Domain.dll
+E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.Domain\obj\Debug\net8.0\RentalManagement.Domain.sourcelink.json

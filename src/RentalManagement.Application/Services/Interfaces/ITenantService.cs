@@ -1,4 +1,5 @@
 using RentalManagement.Application.Common;
+using RentalManagement.Application.DTOs.House;
 using RentalManagement.Application.DTOs.Tenant;
 
 namespace RentalManagement.Application.Services.Interfaces;
@@ -10,4 +11,5 @@ public interface ITenantService
     Task<Result<TenantDto>> CreateAsync(CreateTenantRequest request);
     Task<Result<TenantDto>> UpdateAsync(int id, UpdateTenantRequest request);
     Task<Result<bool>> DeleteAsync(int id);
+    Task<Result<IEnumerable<TenantDto>>> GetAvailableAsync();
 }

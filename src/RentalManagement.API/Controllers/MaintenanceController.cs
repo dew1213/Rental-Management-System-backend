@@ -23,17 +23,17 @@ public class MaintenanceController : ControllerBase
         return result.IsSuccess ? Ok(result.Data) : BadRequest(result.Error);
     }
 
-    [HttpPost]
-    [Authorize(Roles = "Tenant")]
-    public async Task<IActionResult> Create([FromBody] CreateMaintenanceRequest request)
-    {
-        var result = await _maintenanceService.CreateAsync(request);
-        return result.IsSuccess ? Ok(result.Data) : BadRequest(result.Error);
-    }
+    //[HttpPost]
+    //[Authorize(Roles = "Tenant")]
+    //public async Task<IActionResult> Create([FromBody] CreateMaintenanceRequest request)
+    //{
+    //    var result = await _maintenanceService.CreateAsync(request);
+    //    return result.IsSuccess ? Ok(result.Data) : BadRequest(result.Error);
+    //}
 
     [HttpPut("{id}/status")]
     [Authorize(Roles = "Admin")]
-    public async Task<IActionResult> UpdateStatus(int id, [FromQuery] MaintenanceStatus status)
+    public async Task<IActionResult> UpdateStatus(int id, [FromBody] UpdateMaintenanceStatusRequest status)
     {
         var result = await _maintenanceService.UpdateStatusAsync(id, status);
         return result.IsSuccess ? Ok(result.Data) : NotFound(result.Error);

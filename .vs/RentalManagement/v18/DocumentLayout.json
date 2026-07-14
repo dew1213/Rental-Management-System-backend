@@ -3,40 +3,20 @@
   "WorkspaceRootPath": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|src\\RentalManagement.Application\\RentalManagement.Application.csproj|e:\\projasp.net\\rentalmanagementsystem\\rentalmanagement\\src\\rentalmanagement.application\\services\\contracservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|src\\RentalManagement.Application\\RentalManagement.Application.csproj|solutionrelative:src\\rentalmanagement.application\\services\\contracservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|src\\RentalManagement.API\\RentalManagement.API.csproj|e:\\projasp.net\\rentalmanagementsystem\\rentalmanagement\\src\\rentalmanagement.api\\controllers\\maintenancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|src\\RentalManagement.API\\RentalManagement.API.csproj|solutionrelative:src\\rentalmanagement.api\\controllers\\maintenancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|src\\RentalManagement.Application\\RentalManagement.Application.csproj|e:\\projasp.net\\rentalmanagementsystem\\rentalmanagement\\src\\rentalmanagement.application\\services\\interfaces\\icontractservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|src\\RentalManagement.Application\\RentalManagement.Application.csproj|solutionrelative:src\\rentalmanagement.application\\services\\interfaces\\icontractservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|src\\RentalManagement.API\\RentalManagement.API.csproj|e:\\projasp.net\\rentalmanagementsystem\\rentalmanagement\\src\\rentalmanagement.api\\controllers\\housescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|src\\RentalManagement.API\\RentalManagement.API.csproj|solutionrelative:src\\rentalmanagement.api\\controllers\\housescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|src\\RentalManagement.Application\\RentalManagement.Application.csproj|e:\\projasp.net\\rentalmanagementsystem\\rentalmanagement\\src\\rentalmanagement.application\\dtos\\contract\\contractdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|src\\RentalManagement.Application\\RentalManagement.Application.csproj|solutionrelative:src\\rentalmanagement.application\\dtos\\contract\\contractdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|src\\RentalManagement.Application\\RentalManagement.Application.csproj|e:\\projasp.net\\rentalmanagementsystem\\rentalmanagement\\src\\rentalmanagement.application\\dtos\\maintenance\\maintenancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|src\\RentalManagement.Application\\RentalManagement.Application.csproj|solutionrelative:src\\rentalmanagement.application\\dtos\\maintenance\\maintenancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|src\\RentalManagement.Application\\RentalManagement.Application.csproj|e:\\projasp.net\\rentalmanagementsystem\\rentalmanagement\\src\\rentalmanagement.application\\dtos\\tenant\\tenantdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|src\\RentalManagement.Application\\RentalManagement.Application.csproj|solutionrelative:src\\rentalmanagement.application\\dtos\\tenant\\tenantdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|src\\RentalManagement.API\\RentalManagement.API.csproj|e:\\projasp.net\\rentalmanagementsystem\\rentalmanagement\\src\\rentalmanagement.api\\controllers\\contractcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|src\\RentalManagement.API\\RentalManagement.API.csproj|solutionrelative:src\\rentalmanagement.api\\controllers\\contractcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|src\\RentalManagement.API\\RentalManagement.API.csproj|e:\\projasp.net\\rentalmanagementsystem\\rentalmanagement\\src\\rentalmanagement.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|src\\RentalManagement.API\\RentalManagement.API.csproj|solutionrelative:src\\rentalmanagement.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|src\\RentalManagement.API\\RentalManagement.API.csproj|e:\\projasp.net\\rentalmanagementsystem\\rentalmanagement\\src\\rentalmanagement.api\\extensions\\serviceextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|src\\RentalManagement.API\\RentalManagement.API.csproj|solutionrelative:src\\rentalmanagement.api\\extensions\\serviceextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|src\\RentalManagement.Infrastructure\\RentalManagement.Infrastructure.csproj|e:\\projasp.net\\rentalmanagementsystem\\rentalmanagement\\src\\rentalmanagement.infrastructure\\repositories\\contractrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|src\\RentalManagement.Infrastructure\\RentalManagement.Infrastructure.csproj|solutionrelative:src\\rentalmanagement.infrastructure\\repositories\\contractrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|src\\RentalManagement.API\\RentalManagement.API.csproj|e:\\projasp.net\\rentalmanagementsystem\\rentalmanagement\\src\\rentalmanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|src\\RentalManagement.API\\RentalManagement.API.csproj|solutionrelative:src\\rentalmanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|src\\RentalManagement.Application\\RentalManagement.Application.csproj|e:\\projasp.net\\rentalmanagementsystem\\rentalmanagement\\src\\rentalmanagement.application\\services\\maintenanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|src\\RentalManagement.Application\\RentalManagement.Application.csproj|solutionrelative:src\\rentalmanagement.application\\services\\maintenanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,123 +26,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IContractService.cs",
-              "DocumentMoniker": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.Application\\Services\\Interfaces\\IContractService.cs",
-              "RelativeDocumentMoniker": "src\\RentalManagement.Application\\Services\\Interfaces\\IContractService.cs",
-              "ToolTip": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.Application\\Services\\Interfaces\\IContractService.cs",
-              "RelativeToolTip": "src\\RentalManagement.Application\\Services\\Interfaces\\IContractService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAArAAAAAAAAAA==",
+              "Title": "HousesController.cs",
+              "DocumentMoniker": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.API\\Controllers\\HousesController.cs",
+              "RelativeDocumentMoniker": "src\\RentalManagement.API\\Controllers\\HousesController.cs",
+              "ToolTip": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.API\\Controllers\\HousesController.cs",
+              "RelativeToolTip": "src\\RentalManagement.API\\Controllers\\HousesController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAtwCYAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T11:45:57.438Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-14T01:24:06.158Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TenantDto.cs",
-              "DocumentMoniker": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.Application\\DTOs\\Tenant\\TenantDto.cs",
-              "RelativeDocumentMoniker": "src\\RentalManagement.Application\\DTOs\\Tenant\\TenantDto.cs",
-              "ToolTip": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.Application\\DTOs\\Tenant\\TenantDto.cs",
-              "RelativeToolTip": "src\\RentalManagement.Application\\DTOs\\Tenant\\TenantDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "MaintenanceController.cs",
+              "DocumentMoniker": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.API\\Controllers\\MaintenanceController.cs",
+              "RelativeDocumentMoniker": "src\\RentalManagement.API\\Controllers\\MaintenanceController.cs",
+              "ToolTip": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.API\\Controllers\\MaintenanceController.cs",
+              "RelativeToolTip": "src\\RentalManagement.API\\Controllers\\MaintenanceController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwB8AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T11:45:12.483Z",
+              "WhenOpened": "2026-07-14T01:01:58.704Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ContractDto.cs",
-              "DocumentMoniker": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.Application\\DTOs\\Contract\\ContractDto.cs",
-              "RelativeDocumentMoniker": "src\\RentalManagement.Application\\DTOs\\Contract\\ContractDto.cs",
-              "ToolTip": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.Application\\DTOs\\Contract\\ContractDto.cs",
-              "RelativeToolTip": "src\\RentalManagement.Application\\DTOs\\Contract\\ContractDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Title": "MaintenanceDto.cs",
+              "DocumentMoniker": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.Application\\DTOs\\Maintenance\\MaintenanceDto.cs",
+              "RelativeDocumentMoniker": "src\\RentalManagement.Application\\DTOs\\Maintenance\\MaintenanceDto.cs",
+              "ToolTip": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.Application\\DTOs\\Maintenance\\MaintenanceDto.cs",
+              "RelativeToolTip": "src\\RentalManagement.Application\\DTOs\\Maintenance\\MaintenanceDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T11:45:01.61Z",
-              "EditorCaption": ""
-            },
+              "WhenOpened": "2026-07-14T00:54:17.05Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.API\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "src\\RentalManagement.API\\Controllers\\AuthController.cs",
-              "ToolTip": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.API\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "src\\RentalManagement.API\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "MaintenanceService.cs",
+              "DocumentMoniker": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.Application\\Services\\MaintenanceService.cs",
+              "RelativeDocumentMoniker": "src\\RentalManagement.Application\\Services\\MaintenanceService.cs",
+              "ToolTip": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.Application\\Services\\MaintenanceService.cs",
+              "RelativeToolTip": "src\\RentalManagement.Application\\Services\\MaintenanceService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA5wCEAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T11:30:32.586Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Contracservice.cs",
-              "DocumentMoniker": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.Application\\Services\\Contracservice.cs",
-              "RelativeDocumentMoniker": "src\\RentalManagement.Application\\Services\\Contracservice.cs",
-              "ToolTip": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.Application\\Services\\Contracservice.cs",
-              "RelativeToolTip": "src\\RentalManagement.Application\\Services\\Contracservice.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAWwEkAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T10:57:22.324Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ContractController.cs",
-              "DocumentMoniker": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.API\\Controllers\\ContractController.cs",
-              "RelativeDocumentMoniker": "src\\RentalManagement.API\\Controllers\\ContractController.cs",
-              "ToolTip": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.API\\Controllers\\ContractController.cs",
-              "RelativeToolTip": "src\\RentalManagement.API\\Controllers\\ContractController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAwwCAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T10:56:37.716Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ServiceExtensions.cs",
-              "DocumentMoniker": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.API\\Extensions\\ServiceExtensions.cs",
-              "RelativeDocumentMoniker": "src\\RentalManagement.API\\Extensions\\ServiceExtensions.cs",
-              "ToolTip": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.API\\Extensions\\ServiceExtensions.cs",
-              "RelativeToolTip": "src\\RentalManagement.API\\Extensions\\ServiceExtensions.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAwwE0AAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T10:52:27.399Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.API\\Program.cs",
-              "RelativeDocumentMoniker": "src\\RentalManagement.API\\Program.cs",
-              "ToolTip": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.API\\Program.cs",
-              "RelativeToolTip": "src\\RentalManagement.API\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T10:51:42.175Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ContractRepository.cs",
-              "DocumentMoniker": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.Infrastructure\\Repositories\\ContractRepository.cs",
-              "RelativeDocumentMoniker": "src\\RentalManagement.Infrastructure\\Repositories\\ContractRepository.cs",
-              "ToolTip": "E:\\projasp.net\\RentalManagementSystem\\RentalManagement\\src\\RentalManagement.Infrastructure\\Repositories\\ContractRepository.cs",
-              "RelativeToolTip": "src\\RentalManagement.Infrastructure\\Repositories\\ContractRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T10:41:30.382Z",
+              "WhenOpened": "2026-07-14T00:55:39.901Z",
               "EditorCaption": ""
             }
           ]

@@ -274,3 +274,4 @@ E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.API\
 E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.API\obj\Debug\net8.0\RentalManagement.API.pdb
 E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.API\obj\Debug\net8.0\RentalManagement.API.genruntimeconfig.cache
 E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.API\obj\Debug\net8.0\ref\RentalManagement.API.dll
+E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.API\obj\Debug\net8.0\RentalManagement.API.sourcelink.json

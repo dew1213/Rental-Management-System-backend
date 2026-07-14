@@ -211,9 +211,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "RentalManagement.API.Controllers.MaintenanceController",
-    "Method": "GetAll",
-    "RelativePath": "api/Maintenance",
+    "ContainingType": "RentalManagement.API.Controllers.HousesController",
+    "Method": "GetAvailable",
+    "RelativePath": "api/Houses/available",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -222,18 +222,12 @@
   },
   {
     "ContainingType": "RentalManagement.API.Controllers.MaintenanceController",
-    "Method": "Create",
+    "Method": "GetAll",
     "RelativePath": "api/Maintenance",
-    "HttpMethod": "POST",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "RentalManagement.Application.DTOs.Maintenance.CreateMaintenanceRequest",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -251,8 +245,8 @@
       },
       {
         "Name": "status",
-        "Type": "System.String",
-        "IsRequired": false
+        "Type": "RentalManagement.Application.DTOs.Maintenance.UpdateMaintenanceStatusRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -397,6 +391,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RentalManagement.API.Controllers.TenantsController",
+    "Method": "GetAvailable",
+    "RelativePath": "api/Tenants/available",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

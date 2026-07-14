@@ -28,3 +28,4 @@ E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.Appl
 E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.Application\obj\Debug\net8.0\refint\RentalManagement.Application.dll
 E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.Application\obj\Debug\net8.0\RentalManagement.Application.pdb
 E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.Application\obj\Debug\net8.0\ref\RentalManagement.Application.dll
+E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.Application\obj\Debug\net8.0\RentalManagement.Application.sourcelink.json

@@ -57,4 +57,13 @@ public class HousesController : ControllerBase
         var result = await _houseService.UploadImageAsync(id, imageUrl);
         return result.IsSuccess ? Ok(result.Data) : BadRequest(result.Error);
     }
+    [HttpGet("available")]
+    public async Task<IActionResult> GetAvailable()
+    {
+        var result = await _houseService.GetAvailableAsync();
+
+        return result.IsSuccess
+            ? Ok(result.Data)
+            : BadRequest(result.Error);
+    }
 }

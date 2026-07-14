@@ -48,4 +48,13 @@ public class TenantsController : ControllerBase
         var result = await _tenantService.DeleteAsync(id);
         return result.IsSuccess ? NoContent() : NotFound(result.Error);
     }
+    [HttpGet("available")]
+    public async Task<IActionResult> GetAvailable()
+    {
+        var result = await _tenantService.GetAvailableAsync();
+
+        return result.IsSuccess
+            ? Ok(result.Data)
+            : BadRequest(result.Error);
+    }
 }

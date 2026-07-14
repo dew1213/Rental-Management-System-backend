@@ -36,3 +36,4 @@ E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.Infr
 E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.Infrastructure\obj\Debug\net8.0\RentalManagement.Infrastructure.pdb
 E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.Infrastructure\obj\Debug\net8.0\RentalManagement.Infrastructure.genruntimeconfig.cache
 E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.Infrastructure\obj\Debug\net8.0\ref\RentalManagement.Infrastructure.dll
+E:\projasp.net\RentalManagementSystem\RentalManagement\src\RentalManagement.Infrastructure\obj\Debug\net8.0\RentalManagement.Infrastructure.sourcelink.json
