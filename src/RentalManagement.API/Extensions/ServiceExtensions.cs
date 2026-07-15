@@ -77,6 +77,7 @@ public static class ServiceExtensions
         services.AddScoped<ITenantService, TenantService>();
         services.AddScoped<IContractService, ContractService>();
         services.AddScoped<IMaintenanceService, MaintenanceService>();
+        services.AddScoped<IPaymentService, PaymentService>();
         services.AddAutoMapper(typeof(MappingProfile));
         services.AddFluentValidationAutoValidation();
         services.AddValidatorsFromAssemblyContaining<CreateHouseValidator>();

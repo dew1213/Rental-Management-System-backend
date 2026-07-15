@@ -7,12 +7,29 @@ namespace RentalManagement.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[Authorize]
+[Authorize(Roles = "Admin")]
 public class PaymentsController : ControllerBase
 {
     private readonly IPaymentService _paymentService;
 
-    public PaymentsController(IPaymentService paymentService) => _paymentService = paymentService;
+    public PaymentsController(IPaymentService paymentService)
+    {
+        _paymentService = paymentService;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
+    {
+        var result = await _paymentService.GetAllAsync();
+        return result.IsSuccess ? Ok(result.Data) : BadRequest(result.Error);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(int id)
+    {
+        var result = await _paymentService.GetByIdAsync(id);
+        return result.IsSuccess ? Ok(result.Data) : NotFound(result.Error);
+    }
 
     [HttpGet("contract/{contractId}")]
     public async Task<IActionResult> GetByContract(int contractId)
@@ -22,26 +39,19 @@ public class PaymentsController : ControllerBase
     }
 
     [HttpGet("overdue")]
-    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> GetOverdue()
     {
         var result = await _paymentService.GetOverdueAsync();
         return result.IsSuccess ? Ok(result.Data) : BadRequest(result.Error);
     }
 
-    [HttpPost]
-    [Authorize(Roles = "Admin")]
-    public async Task<IActionResult> Create([FromBody] CreatePaymentRequest request)
-    {
-        var result = await _paymentService.CreateAsync(request);
-        return result.IsSuccess ? Ok(result.Data) : BadRequest(result.Error);
-    }
-
     [HttpPut("{id}/pay")]
-    [Authorize(Roles = "Admin")]
-    public async Task<IActionResult> MarkAsPaid(int id, [FromBody] MarkPaidRequest request)
+    public async Task<IActionResult> Pay(int id, MarkPaidRequest request)
     {
         var result = await _paymentService.MarkAsPaidAsync(id, request);
-        return result.IsSuccess ? Ok(result.Data) : NotFound(result.Error);
+
+        return result.IsSuccess
+            ? Ok(result.Data)
+            : NotFound(result.Error);
     }
 }
