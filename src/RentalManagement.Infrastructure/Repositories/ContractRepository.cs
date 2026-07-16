@@ -33,5 +33,10 @@ namespace RentalManagement.Infrastructure.Repositories
                 .Include(c => c.Tenant)
                 .FirstOrDefaultAsync(c => c.Id == id);
         }
+        public async Task<Contract?> GetByTenantIdWithDetailsAsync(int id) 
+        {
+            return await _context.Contracts
+                .FirstOrDefaultAsync(c => c.Id == id);
+        }
     }
 }

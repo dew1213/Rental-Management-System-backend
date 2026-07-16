@@ -12,7 +12,7 @@ public class UnitOfWork : IUnitOfWork
     public IGenericRepository<Tenant> Tenants { get; }
     public IContractRepository Contracts { get; }
     public IGenericRepository<Payment> Payments { get; }
-    public IGenericRepository<MaintenanceRequest> MaintenanceRequests { get; }
+    public IMaintenanceRepository MaintenanceRequest { get; }
     public IGenericRepository<Admin> Admins { get; }
 
     public UnitOfWork(AppDbContext context)
@@ -22,7 +22,7 @@ public class UnitOfWork : IUnitOfWork
         Tenants = new GenericRepository<Tenant>(context);
         Contracts = new ContractRepository(context);
         Payments = new GenericRepository<Payment>(context);
-        MaintenanceRequests = new GenericRepository<MaintenanceRequest>(context);
+        MaintenanceRequest = new MaintenanceRepository(context);
         Admins = new GenericRepository<Admin>(context);
     }
 

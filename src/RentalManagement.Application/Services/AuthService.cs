@@ -39,7 +39,7 @@ public class AuthService : IAuthService
         if (!VerifyPassword(request.Password, user.PasswordHash))
             return Result<LoginResponse>.Failure("Invalid password");
 
-        var token = GenerateToken(user.Email, "Admin", user.Username);
+        var token = GenerateToken(user.Id, user.Email, "Admin", user.Username);
 
         return Result<LoginResponse>.Success(
             new LoginResponse(token, "Admin", user.Username)
@@ -60,7 +60,7 @@ public class AuthService : IAuthService
         if (!VerifyPassword(request.Password, user.PasswordHash))
             return Result<LoginResponse>.Failure("Invalid password");
 
-        var token = GenerateToken(user.Email, "Tenant", user.FirstName);
+        var token = GenerateToken(user.Id,user.Email, "Tenant", user.FirstName);
 
         return Result<LoginResponse>.Success(
             new LoginResponse(token, "Tenant", user.FirstName)
@@ -68,7 +68,7 @@ public class AuthService : IAuthService
     }
 
     // ================= JWT =================
-    private string GenerateToken(string email, string role, string name)
+    private string GenerateToken(int userId , string email, string role, string name)
     {
         var key = new SymmetricSecurityKey(
             Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]!)
@@ -78,6 +78,7 @@ public class AuthService : IAuthService
 
         var claims = new[]
         {
+            new Claim(ClaimTypes.NameIdentifier, userId.ToString()),
             new Claim(ClaimTypes.Email, email),
             new Claim(ClaimTypes.Role, role),
             new Claim(ClaimTypes.Name, name)

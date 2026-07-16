@@ -22,7 +22,7 @@ public class JwtService
             new Claim(ClaimTypes.NameIdentifier, userId.ToString()),
             new Claim(ClaimTypes.Email, email),
             new Claim(ClaimTypes.Role, role),
-            new Claim(ClaimTypes.Name, name)
+            new Claim(ClaimTypes.Name, name),
         };
 
         var token = new JwtSecurityToken(
