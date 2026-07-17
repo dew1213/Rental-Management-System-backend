@@ -110,4 +110,29 @@ public class PaymentService : IPaymentService
             payment.Note
         ));
     }
+
+    public async Task<Result<IEnumerable<PaymentDto>>> GetMyAsync(int userId)
+    {
+        var contract = await _unitOfWork.Contracts.GetByIdWithDetailsAsync(userId);
+
+        if (contract == null)
+            return Result<IEnumerable<PaymentDto>>
+                .Failure("Contract not found.");
+
+        var payments = await _unitOfWork.Payments
+            .GetByContractIdAsync(userId);
+
+        var result = payments.Select(p => new PaymentDto(
+            p.Id,
+            p.ContractId,
+            p.Amount,
+            p.DueDate,
+            p.PaidDate,
+            p.Status,
+            p.Note
+        ));
+
+        return Result<IEnumerable<PaymentDto>>
+            .Success(result);
+    }
 }

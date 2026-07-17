@@ -2,12 +2,13 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RentalManagement.Application.DTOs.Payment;
 using RentalManagement.Application.Services.Interfaces;
+using System.Security.Claims;
 
 namespace RentalManagement.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[Authorize(Roles = "Admin")]
+[Authorize]
 public class PaymentsController : ControllerBase
 {
     private readonly IPaymentService _paymentService;
@@ -18,6 +19,7 @@ public class PaymentsController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> GetAll()
     {
         var result = await _paymentService.GetAllAsync();
@@ -25,6 +27,7 @@ public class PaymentsController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> GetById(int id)
     {
         var result = await _paymentService.GetByIdAsync(id);
@@ -32,6 +35,7 @@ public class PaymentsController : ControllerBase
     }
 
     [HttpGet("contract/{contractId}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> GetByContract(int contractId)
     {
         var result = await _paymentService.GetByContractAsync(contractId);
@@ -39,6 +43,7 @@ public class PaymentsController : ControllerBase
     }
 
     [HttpGet("overdue")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> GetOverdue()
     {
         var result = await _paymentService.GetOverdueAsync();
@@ -46,6 +51,7 @@ public class PaymentsController : ControllerBase
     }
 
     [HttpPut("{id}/pay")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Pay(int id, MarkPaidRequest request)
     {
         var result = await _paymentService.MarkAsPaidAsync(id, request);
@@ -54,4 +60,20 @@ public class PaymentsController : ControllerBase
             ? Ok(result.Data)
             : NotFound(result.Error);
     }
+    [HttpGet("my")]
+    [Authorize(Roles = "Tenant")]
+    public async Task<IActionResult> GetMy()
+    {
+        var userIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        if (!int.TryParse(userIdClaim, out var userId))
+            return Unauthorized();
+
+        var result = await _paymentService.GetMyAsync(userId);
+
+        return result.IsSuccess
+            ? Ok(result.Data)
+            : BadRequest(result.Error);
+    }
+
 }

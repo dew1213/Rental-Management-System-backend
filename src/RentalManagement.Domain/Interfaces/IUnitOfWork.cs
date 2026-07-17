@@ -7,7 +7,7 @@ public interface IUnitOfWork : IDisposable
     IGenericRepository<House> Houses { get; }
     IGenericRepository<Tenant> Tenants { get; }
     IContractRepository Contracts { get; }
-    IGenericRepository<Payment> Payments { get; }
+    IPaymentRepository Payments { get; }
     IMaintenanceRepository MaintenanceRequest { get; }
     IGenericRepository<Admin> Admins { get; }
     Task<int> SaveChangesAsync();

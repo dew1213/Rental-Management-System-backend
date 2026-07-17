@@ -11,7 +11,7 @@ public class UnitOfWork : IUnitOfWork
     public IGenericRepository<House> Houses { get; }
     public IGenericRepository<Tenant> Tenants { get; }
     public IContractRepository Contracts { get; }
-    public IGenericRepository<Payment> Payments { get; }
+    public IPaymentRepository Payments { get; }
     public IMaintenanceRepository MaintenanceRequest { get; }
     public IGenericRepository<Admin> Admins { get; }
 
@@ -21,7 +21,7 @@ public class UnitOfWork : IUnitOfWork
         Houses = new GenericRepository<House>(context);
         Tenants = new GenericRepository<Tenant>(context);
         Contracts = new ContractRepository(context);
-        Payments = new GenericRepository<Payment>(context);
+        Payments = new PaymentRepository(context);
         MaintenanceRequest = new MaintenanceRepository(context);
         Admins = new GenericRepository<Admin>(context);
     }
