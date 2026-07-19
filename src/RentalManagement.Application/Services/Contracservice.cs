@@ -157,4 +157,18 @@ public class ContractService : IContractService
 
         return Result<bool>.Success(true);
     }
+    public async Task<Result<IEnumerable<ActiveContractDto>>> GetActiveContractsAsync()
+    {
+        var contracts = await _unitOfWork.Contracts
+            .GetActiveContractsAsync();
+
+        var result = contracts.Select(c => new ActiveContractDto(
+            c.Id,
+            $"{c.Tenant.FirstName} {c.Tenant.LastName}",
+            c.House.Name
+        ));
+
+        return Result<IEnumerable<ActiveContractDto>>
+            .Success(result);
+    }
 }

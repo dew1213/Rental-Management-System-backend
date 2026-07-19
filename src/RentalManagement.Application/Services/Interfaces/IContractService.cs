@@ -10,4 +10,5 @@ public interface IContractService
     Task<Result<ContractDto>> CreateAsync(CreateContractRequest request);
     Task<Result<bool>> DeleteAsync(int id);
     Task<Result<ContractDto>> UpdateAsync(int id, UpdateContractRequest request);
+    Task<Result<IEnumerable<ActiveContractDto>>> GetActiveContractsAsync();
 }

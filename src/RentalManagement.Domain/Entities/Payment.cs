@@ -11,5 +11,6 @@ public class Payment : BaseEntity
     public DateTime? PaidDate { get; set; }
     public DateTime DueDate { get; set; }
     public PaymentStatus Status { get; set; } = PaymentStatus.Pending;
+    public string? SlipImageUrl { get; set; }
     public string? Note { get; set; }
 }

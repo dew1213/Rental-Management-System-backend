@@ -11,4 +11,6 @@ public interface IPaymentService
     Task<Result<IEnumerable<PaymentDto>>> GetOverdueAsync();
     Task<Result<PaymentDto>> MarkAsPaidAsync(int id, MarkPaidRequest request);
     Task<Result<IEnumerable<PaymentDto>>> GetMyAsync(int userId);
+    Task<Result<PaymentDto>> CreateAsync(CreatePaymentRequest request);
+
 }

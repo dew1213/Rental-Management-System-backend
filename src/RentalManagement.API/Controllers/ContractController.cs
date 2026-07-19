@@ -60,4 +60,13 @@ public class ContractsController : ControllerBase
             ? NoContent()
             : NotFound(result.Error);
     }
+    [HttpGet("active")]
+    public async Task<IActionResult> GetActiveContracts()
+    {
+        var result = await _contractService.GetActiveContractsAsync();
+
+        return result.IsSuccess
+            ? Ok(result.Data)
+            : BadRequest(result.Error);
+    }
 }

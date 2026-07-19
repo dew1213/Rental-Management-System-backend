@@ -1,12 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RentalManagement.Domain.Entities;
+using RentalManagement.Domain.Enums;
+using RentalManagement.Domain.Interfaces;
 using RentalManagement.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RentalManagement.Domain.Entities;
-using RentalManagement.Domain.Interfaces;
 
 namespace RentalManagement.Infrastructure.Repositories
 {
@@ -37,6 +38,14 @@ namespace RentalManagement.Infrastructure.Repositories
         {
             return await _context.Contracts
                 .FirstOrDefaultAsync(c => c.Id == id);
+        }
+        public async Task<IEnumerable<Contract>> GetActiveContractsAsync()
+        {
+            return await _context.Contracts
+                .Include(c => c.Tenant)
+                .Include(c => c.House)
+                .Where(c => c.Status == ContractStatus.Active)
+                .ToListAsync();
         }
     }
 }

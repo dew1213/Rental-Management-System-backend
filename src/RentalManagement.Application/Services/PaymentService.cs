@@ -135,4 +135,35 @@ public class PaymentService : IPaymentService
         return Result<IEnumerable<PaymentDto>>
             .Success(result);
     }
+    public async Task<Result<PaymentDto>> CreateAsync(CreatePaymentRequest request)
+    {
+        var contract = await _unitOfWork.Contracts
+            .GetByIdAsync(request.ContractId);
+
+        if (contract == null)
+            return Result<PaymentDto>.Failure("Contract not found.");
+
+        var payment = new Payment
+        {
+            ContractId = request.ContractId,
+            Amount = request.Amount,
+            DueDate = request.DueDate.ToUniversalTime(),
+            Status = PaymentStatus.Pending,
+            Note = request.Note
+        };
+
+        await _unitOfWork.Payments.AddAsync(payment);
+        await _unitOfWork.SaveChangesAsync();
+
+        return Result<PaymentDto>.Success(
+            new PaymentDto(
+                payment.Id,
+                payment.ContractId,
+                payment.Amount,
+                payment.DueDate,
+                payment.PaidDate,
+                payment.Status,
+                payment.Note
+            ));
+    }
 }

@@ -119,6 +119,11 @@ public class TenantService : ITenantService
         if (tenant == null)
             return Result<bool>.Failure("Tenant not found.");
 
+        var hasContract = await _unitOfWork.Tenants.ExistsByTenantIdAsync(id);
+
+        if (hasContract)
+            return Result<bool>.Failure("ไม่สามารถลบผู้เช่าได้ เนื่องจากมีสัญญาเช่าอยู่");
+
         _unitOfWork.Tenants.Remove(tenant);
         await _unitOfWork.SaveChangesAsync();
 

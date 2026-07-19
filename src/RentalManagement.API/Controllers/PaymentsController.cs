@@ -60,6 +60,16 @@ public class PaymentsController : ControllerBase
             ? Ok(result.Data)
             : NotFound(result.Error);
     }
+    [HttpPost]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Create(CreatePaymentRequest request)
+    {
+        var result = await _paymentService.CreateAsync(request);
+
+        return result.IsSuccess
+            ? Ok(result.Data)
+            : BadRequest(result.Error);
+    }
     [HttpGet("my")]
     [Authorize(Roles = "Tenant")]
     public async Task<IActionResult> GetMy()

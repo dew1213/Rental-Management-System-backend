@@ -8,8 +8,8 @@ public class UnitOfWork : IUnitOfWork
 {
     private readonly AppDbContext _context;
 
-    public IGenericRepository<House> Houses { get; }
-    public IGenericRepository<Tenant> Tenants { get; }
+    public IHouseRepository Houses { get; }
+    public ITenantRepository Tenants { get; }
     public IContractRepository Contracts { get; }
     public IPaymentRepository Payments { get; }
     public IMaintenanceRepository MaintenanceRequest { get; }
@@ -18,8 +18,8 @@ public class UnitOfWork : IUnitOfWork
     public UnitOfWork(AppDbContext context)
     {
         _context = context;
-        Houses = new GenericRepository<House>(context);
-        Tenants = new GenericRepository<Tenant>(context);
+        Houses = new HouseRepository(context);
+        Tenants = new TenantRepository(context);
         Contracts = new ContractRepository(context);
         Payments = new PaymentRepository(context);
         MaintenanceRequest = new MaintenanceRepository(context);

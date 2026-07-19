@@ -116,6 +116,11 @@ public class HouseService : IHouseService
         if (house == null)
             return Result<bool>.Failure("House not found");
 
+        var hasContract = await _unitOfWork.Houses.ExistsByHouseIdAsync(id);
+
+        if (hasContract)
+            return Result<bool>.Failure("ไม่สามารถลบบ้านได้ เนื่องจากมีสัญญาเช่าอยู่");
+
         _unitOfWork.Houses.Remove(house);
         await _unitOfWork.SaveChangesAsync();
 

@@ -4,8 +4,8 @@ namespace RentalManagement.Domain.Interfaces;
 
 public interface IUnitOfWork : IDisposable
 {
-    IGenericRepository<House> Houses { get; }
-    IGenericRepository<Tenant> Tenants { get; }
+    IHouseRepository Houses { get; }
+    ITenantRepository Tenants { get; }
     IContractRepository Contracts { get; }
     IPaymentRepository Payments { get; }
     IMaintenanceRepository MaintenanceRequest { get; }
