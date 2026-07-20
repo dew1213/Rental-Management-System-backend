@@ -85,5 +85,26 @@ public class PaymentsController : ControllerBase
             ? Ok(result.Data)
             : BadRequest(result.Error);
     }
+    [HttpPost("{id}/upload-slip")]
+    [Authorize(Roles = "Tenant")]
+    public async Task<IActionResult> UploadSlip(
+    int id,
+    [FromForm] UploadSlipRequest request)
+    {
+        var userIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        if (!int.TryParse(userIdClaim, out var userId))
+            return Unauthorized();
+
+        var result = await _paymentService.UploadSlipAsync(
+            id,
+            userId,
+            request);
+
+        if (!result.IsSuccess)
+            return BadRequest(result.IsSuccess);
+
+        return Ok(result);
+    }
 
 }

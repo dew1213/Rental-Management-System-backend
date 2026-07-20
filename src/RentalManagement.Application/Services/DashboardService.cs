@@ -55,6 +55,7 @@ namespace RentalManagement.Application.Services
                         x.DueDate,
                         x.PaidDate,
                         x.Status,
+                        x.SlipImageUrl,
                         x.Note
                     ))
                     .ToList()
@@ -112,6 +113,7 @@ namespace RentalManagement.Application.Services
                             nextPayment.DueDate,
                             nextPayment.PaidDate,
                             nextPayment.Status,
+                            nextPayment.SlipImageUrl,
                             nextPayment.Note
                         ),
 

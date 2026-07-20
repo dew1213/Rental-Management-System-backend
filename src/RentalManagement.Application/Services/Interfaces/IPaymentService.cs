@@ -12,5 +12,5 @@ public interface IPaymentService
     Task<Result<PaymentDto>> MarkAsPaidAsync(int id, MarkPaidRequest request);
     Task<Result<IEnumerable<PaymentDto>>> GetMyAsync(int userId);
     Task<Result<PaymentDto>> CreateAsync(CreatePaymentRequest request);
-
+    Task<Result<bool>> UploadSlipAsync(int paymentId,int tenantId,UploadSlipRequest request);
 }

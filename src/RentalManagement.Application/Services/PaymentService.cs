@@ -27,6 +27,7 @@ public class PaymentService : IPaymentService
             x.DueDate,
             x.PaidDate,
             x.Status,
+            x.SlipImageUrl,
             x.Note
         ));
 
@@ -47,6 +48,7 @@ public class PaymentService : IPaymentService
             payment.DueDate,
             payment.PaidDate,
             payment.Status,
+            payment.SlipImageUrl,
             payment.Note
         ));
     }
@@ -62,6 +64,7 @@ public class PaymentService : IPaymentService
             x.DueDate,
             x.PaidDate,
             x.Status,
+            x.SlipImageUrl,
             x.Note
         ));
 
@@ -79,6 +82,7 @@ public class PaymentService : IPaymentService
             x.DueDate,
             x.PaidDate,
             x.Status,
+            x.SlipImageUrl,
             x.Note
         ));
 
@@ -107,6 +111,7 @@ public class PaymentService : IPaymentService
             payment.DueDate,
             payment.PaidDate,
             payment.Status,
+            payment.SlipImageUrl,
             payment.Note
         ));
     }
@@ -129,6 +134,7 @@ public class PaymentService : IPaymentService
             p.DueDate,
             p.PaidDate,
             p.Status,
+            p.SlipImageUrl,
             p.Note
         ));
 
@@ -163,7 +169,48 @@ public class PaymentService : IPaymentService
                 payment.DueDate,
                 payment.PaidDate,
                 payment.Status,
+                payment.SlipImageUrl,
                 payment.Note
             ));
+    }
+    public async Task<Result<bool>> UploadSlipAsync(
+    int paymentId,
+    int tenantId,
+    UploadSlipRequest request)
+    {
+        var payment = await _unitOfWork.Payments.GetByIdAsync(paymentId);
+
+        if (payment == null)
+            return Result<bool>.Failure("Payment not found");
+
+        var contract = await _unitOfWork.Contracts.GetByIdAsync(payment.ContractId);
+
+        if (contract == null || contract.TenantId != tenantId)
+            return Result<bool>.Failure("Permission denied");
+
+        // upload image
+        var fileName = $"{Guid.NewGuid()}{Path.GetExtension(request.Slip.FileName)}";
+
+        var folder = Path.Combine("wwwroot", "uploads", "slips");
+
+        if (!Directory.Exists(folder))
+            Directory.CreateDirectory(folder);
+
+        var path = Path.Combine(folder, fileName);
+
+        using (var stream = new FileStream(path, FileMode.Create))
+        {
+            await request.Slip.CopyToAsync(stream);
+        }
+
+        payment.SlipImageUrl = $"/uploads/slips/{fileName}";
+        payment.Note = request.Note;
+
+        // ส่งมาตรวจสอบ
+        payment.Status = PaymentStatus.Reviewing;
+
+        await _unitOfWork.SaveChangesAsync();
+
+        return Result<bool>.Success(true);
     }
 }

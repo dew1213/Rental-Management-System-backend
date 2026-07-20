@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RentalManagement.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73e49576c164d9740bb2009a46e4ec633add045c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1ac37d88bf0062cb3475c5aa9adc80af603abff7")]
 [assembly: System.Reflection.AssemblyProductAttribute("RentalManagement.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RentalManagement.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
